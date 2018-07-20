@@ -37,6 +37,8 @@ describe('some cool feature', function() {
         driver.findElement(By.name(selectors.passinput)).sendKeys(password);
         driver.findElement(By.css(selectors.submitBtn)).click();
     });
+
+    it();
     
     // it('should work as expected', function() {
     //     chai.expect('return window.scrollX').to.be.a(1);
