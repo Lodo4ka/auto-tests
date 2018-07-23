@@ -1,9 +1,6 @@
 module.exports = {
-    // Home page
+    // Login page
     nameinput: 'email',
     passinput: 'password',
     submitBtn: 'button#Myid'
-
-
-    
 };

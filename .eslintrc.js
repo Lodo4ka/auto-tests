@@ -1,10 +1,6 @@
 module.exports = {
-    // "plugins": [
-    //   "mocha"
-    // ],
     "env": {
         "node": true,
-        "es6": true,
         "mocha": true
     },
     "extends": "eslint:recommended",
@@ -29,6 +25,5 @@ module.exports = {
             "always"
         ],
         'no-console': 'off',
-        // "mocha/no-exclusive-tests": "error"
     }
 };
