@@ -1,6 +1,12 @@
 const LoginBasic = require('../Auth/LoginBasic.spec.js');
 const path = require('path');
-const driver = require('../driver.js');
+let driver;
+if (process.env.driver === 'firefox') {
+    driver = require('../driverFirefox.js');
+}
+if (process.env.driver === 'chrome') {
+    driver = require('../driverChrome.js');
+}
 const {
     it,
     after,
@@ -22,6 +28,11 @@ const suggestionAddress = require('../../../utils/selectors.js').suggestionAddre
 const tabLegalInfo = require('../../../utils/selectors.js').tabLegalInfo;
 const suggestionOGRN = require('../../../utils/selectors.js').suggestionOGRN;
 const suggestion_inn = require('../../../utils/selectors.js').suggestion_inn;
+const suggestion_state_registration_date = require('../../../utils/selectors.js').suggestion_state_registration_date;
+const suggestion_kpp = require('../../../utils/selectors.js').suggestion_kpp;
+const suggestion_opf_code = require('../../../utils/selectors.js').suggestion_opf_code;
+const suggestion_okved = require('../../../utils/selectors.js').suggestion_okved;
+const suggestion_management_name = require('../../../utils/selectors.js').suggestion_management_name;
 
 const fakeData = require('../../../config/fake_data.js');
 const clientUrl = require(path.relative('./', '../../../config/login.js')).clientUrl;
@@ -99,21 +110,24 @@ describe.only('written moch data in form when create client', function() {
         }).finally(done);
     });
 
-    it.only('write mocha data in legal information client', function (done) {
+    it.only('write mocha data in legal information client', async function (done) {
 
-        driver.wait(until.elementLocated(By.css(addClientBtn)), 20000).then(element => {
+        await driver.wait(until.elementLocated(By.css(addClientBtn)), 20000).then(element => {
             return driver.wait(until.elementIsVisible(element), 20000);
         }).then(button => {
             button.click();
         }).finally(done);
 
-        driver.wait(until.elementLocated(By.css(tabLegalInfo)), 20000).then(element => {
+        let elementClientBtn = driver.wait(until.elementLocated(By.css(addClientBtn)), 20000);
+        elementClientBtn;
+
+        await driver.wait(until.elementLocated(By.css(tabLegalInfo)), 20000).then(element => {
             return driver.wait(until.elementIsVisible(element), 20000);
         }).then(button => {
             button.click();
         }).finally(done);
 
-        driver.wait(until.elementLocated(By.css(suggestionAddress)), 20000).then(element => {
+        await driver.wait(until.elementLocated(By.css(suggestionAddress)), 20000).then(element => {
             return driver.wait(until.elementIsVisible(element), 20000);
         }).then(input => {
             input.sendKeys(fakeData().address);
@@ -125,10 +139,40 @@ describe.only('written moch data in form when create client', function() {
         //     input.sendKeys(fakeData().ogrn);
         // }).finally(done);
 
-        driver.wait(until.elementLocated(By.css(suggestion_inn)), 20000).then(element => {
-            return driver.wait(until.elementIsVisible(element), 20000);
-        }).then(input => {
-            input.sendKeys(fakeData().inn);
-        }).finally(done);
+        // driver.wait(until.elementLocated(By.css(suggestion_inn)), 20000).then(element => {
+        //     return driver.wait(until.elementIsVisible(element), 20000);
+        // }).then(input => {
+        //     input.sendKeys(fakeData().inn);
+        // }).finally(done);
+
+        // driver.wait(until.elementLocated(By.css(suggestion_state_registration_date)), 20000).then(element => {
+        //     return driver.wait(until.elementIsVisible(element), 20000);
+        // }).then(input => {
+        //     input.sendKeys(fakeData().date_registration);
+        // }).finally(done);
+
+        // driver.wait(until.elementLocated(By.css(suggestion_kpp)), 20000).then(element => {
+        //     return driver.wait(until.elementIsVisible(element), 20000);
+        // }).then(input => {
+        //     input.sendKeys(fakeData().KPP);
+        // }).finally(done);
+        
+        // driver.wait(until.elementLocated(By.css(suggestion_opf_code)), 20000).then(element => {
+        //     return driver.wait(until.elementIsVisible(element), 20000);
+        // }).then(input => {
+        //     input.sendKeys(fakeData().code_OPF);
+        // }).finally(done);
+        
+        // driver.wait(until.elementLocated(By.css(suggestion_okved)), 20000).then(element => {
+        //     return driver.wait(until.elementIsVisible(element), 20000);
+        // }).then(input => {
+        //     input.sendKeys(fakeData().code_OKVED);
+        // }).finally(done);
+        
+        // driver.wait(until.elementLocated(By.css(suggestion_management_name)), 20000).then(element => {
+        //     return driver.wait(until.elementIsVisible(element), 20000);
+        // }).then(input => {
+        //     input.sendKeys(fakeData().general_director);
+        // }).finally(done);
     });
 });

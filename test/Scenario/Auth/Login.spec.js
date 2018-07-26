@@ -41,26 +41,21 @@ describe('login into home page', function () {
         driver.quit();
     });
 
-    it('login into crm2', function () {
-        driver.findElement(By.name(nameInput)).sendKeys(login).then(function (result) {
-
+    it('login into crm2', function (done) {
+        driver.findElement(By.name(nameInput)).sendKeys(login).then(function () {
         }).catch(function (error) {
             console.log(error);
         });
-        driver.findElement(By.name(passInput)).sendKeys(password).then(function (result) {
+        driver.findElement(By.name(passInput)).sendKeys(password).then(function () {
 
-        }).catch(function (error) {
-            console.log(error);
         });
-        driver.findElement(By.css(submitBtn)).click().then(function (result) {
+        driver.findElement(By.css(submitBtn)).click().then(function () {
 
-        }).catch(function (error) {
-            console.log(error);
-        });
+        }).finally(done);
     });
 
     it('should receive values from session storage', function () {
-        // this.timeout(2500);
+
         driver.executeScript('return window.sessionStorage.getItem(\'blockIsDisActive\')').then(function (result) {
             console.log(result);
         }).catch(function (error) {
@@ -73,7 +68,7 @@ describe('login into home page', function () {
     });
 
     it('check sessionStorage after logout', function () {
-        driver.executeScript('return window.sessionStorage.getItem(\'blockIsDisActive\')').then(function (result) {
+        driver.executeScript('return window.sessionStorage.getItem(\'blockIsDisActive\')').then(function () {
 
         }).catch(function (error) {
             console.log(error);

@@ -19,7 +19,7 @@ const fake = function() {
         KPP: faker.random.number(),
         code_OPF: faker.random.number(),
         code_OKVED: faker.random.alphaNumeric(),
-        general_director: faker.internet.userName()
+        general_director: faker.internet.userName(),
     };
 };
 

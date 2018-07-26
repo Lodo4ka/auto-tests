@@ -26,5 +26,9 @@ module.exports = {
     tabLegalInfo: '[href="#tab-group-6"]',
     suggestionOGRN: '#suggestion_ogrn',
     suggestion_inn: '#suggestion_inn',
-
+    suggestion_state_registration_date: '#suggestion_state_registration_datele',
+    suggestion_kpp: '#suggestion_kpp',
+    suggestion_opf_code: '#suggestion_opf_code',
+    suggestion_okved: '#suggestion_okved',
+    suggestion_management_name: '#suggestion_management_name'
 };

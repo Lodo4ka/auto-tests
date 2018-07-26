@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha './test/**/*.spec.js'"
+    "test": "driver=chrome mocha './test/**/*.spec.js'"
   },
   "keywords": [],
   "author": "",
@@ -13,12 +13,14 @@
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "faker": "^4.1.0",
+    "mocha": "^5.2.0",
     "selenium-webdriver": "^3.6.0",
     "webdrivercss": "github:visualregressiontesting/webdrivercss",
     "webdriverio": "^4.13.1"
   },
   "devDependencies": {
     "chai-webdriver-exec": "^1.0.0",
-    "mochawesome": "^3.0.2"
+    "mochawesome": "^3.0.2",
+    "webdriverajax": "^2.2.0"
   }
 }
