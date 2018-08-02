@@ -1,178 +1,112 @@
 const LoginBasic = require('../Auth/LoginBasic.spec.js');
+const chai = require('chai');
+const assert = require('chai').assert;
+const chaiAsPromised = require('chai-as-promised');
+chai.use(chaiAsPromised);
 const path = require('path');
 let driver;
 if (process.env.driver === 'firefox') {
-    driver = require('../driverFirefox.js');
+  driver = require('../driverFirefox.js');
 }
 if (process.env.driver === 'chrome') {
-    driver = require('../driverChrome.js');
+  driver = require('../driverChrome.js');
 }
 const {
-    it,
-    after,
-    before,
-    describe
+  it,
+  after,
+  before,
+  describe,
 } = require('selenium-webdriver/testing');
 const By = require('selenium-webdriver').By;
 const until = require('selenium-webdriver').until;
-
+const TIMEOUT = 100000;
 const addClientBtn = require('../../../utils/selectors.js').addClientBtn;
-const nameinput = require('../../../utils/selectors.js').nameInputClient;
-const countryInputClient = require('../../../utils/selectors.js').countryInputClient;
-const cityInputClient = require('../../../utils/selectors.js').cityInputClient;
-const addressInputClient = require('../../../utils/selectors.js').addressInputClient;
-const wedsiteInputClient = require('../../../utils/selectors.js').wedsiteInputClient;
-const commentInputClient = require('../../../utils/selectors.js').commentInputClient;
-const createBtnClient = require('../../../utils/selectors.js').createBtnClient;
-const suggestionAddress = require('../../../utils/selectors.js').suggestionAddress;
-const tabLegalInfo = require('../../../utils/selectors.js').tabLegalInfo;
-const suggestionOGRN = require('../../../utils/selectors.js').suggestionOGRN;
-const suggestion_inn = require('../../../utils/selectors.js').suggestion_inn;
-const suggestion_state_registration_date = require('../../../utils/selectors.js').suggestion_state_registration_date;
-const suggestion_kpp = require('../../../utils/selectors.js').suggestion_kpp;
-const suggestion_opf_code = require('../../../utils/selectors.js').suggestion_opf_code;
-const suggestion_okved = require('../../../utils/selectors.js').suggestion_okved;
-const suggestion_management_name = require('../../../utils/selectors.js').suggestion_management_name;
-
 const fakeData = require('../../../config/fake_data.js');
 const clientUrl = require(path.relative('./', '../../../config/login.js')).clientUrl;
+let levelLogging = require('selenium-webdriver').logging.Type.BROWSER;
+const chaiHttp = require('chai-http');
+chai.use(chaiHttp);
 
-describe.only('written moch data in form when create client', function() {
-    before(async function() {
-        await LoginBasic();
-        driver.get(clientUrl);
+
+describe.only('written moch data in form when create client', function () {
+  let scriptToExecute = 'var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return network;';
+
+  before(async function (done) {
+    await LoginBasic();
+    driver.get(clientUrl);
+    done();
+  });
+  after(function (done) {
+    driver.quit().then(done);
+  });
+
+
+  it.only('write moch data in client section', async function (done) {
+    let page = 0;
+    let pageInput = 0;
+    let pageIndex = 0;
+    let tabCount = 0;
+
+    const elementFirst = await driver.wait(until.elementLocated(By.css(addClientBtn)), TIMEOUT);
+    const buttonFirst = await driver.wait(until.elementIsVisible(elementFirst), TIMEOUT);
+    await buttonFirst.click();
+    const elementsSecond = await driver.wait(until.elementsLocated(By.css('.modal-content form input:not([type=hidden]), .modal-content form textarea')), TIMEOUT);
+    const elementsThird = await driver.wait(until.elementsLocated(By.css('[data-toggle="tab"]')), TIMEOUT);
+
+    (async function () {
+      const elementsThird = await driver.wait(until.elementsLocated(By.css('.modal-content form input:not([type=hidden]), .modal-content form textarea')), TIMEOUT);
+      for (let i = 0; i <= elementsThird.length - 1; i++) {
+        await driver.wait(until.elementIsVisible(elementsSecond[i]), TIMEOUT).then(bool => {
+          if (bool) {
+            pageIndex++;
+            console.log(`pageIndex is ${pageIndex}`);
+          }
+        });
+      }
+    })();
+
+    (async function () {
+      for (let i = 0; i <= elementsThird.length; i++) {
+        tabCount = i;
+      }
+      console.log(`tab count = ${tabCount}`);
+    })();
+
+
+    for (let i = 0; i <= elementsSecond.length - 1; i++) {
+      await driver.wait(until.elementIsVisible(elementsSecond[i]), TIMEOUT);
+      await elementsSecond[i].getAttribute('name');
+      await elementsSecond[i].sendKeys(fakeData().comment).catch(error => {
+        console.log(error);
+      });
+      pageInput = i;
+      console.log(`This is pageInput:${pageInput}`);
+      if (pageInput >= pageIndex - 1) {
+        if (page < tabCount - 1) {
+          await elementsThird[page + 1].click();
+          page++;
+        }
+      }
+    }
+    const elementEight = await driver.wait(until.elementLocated(By.css('.modal-content form .btn-group button')), TIMEOUT)
+      .catch(error => {
+        console.log(error);
+      });
+    const inputEight = await driver.wait(until.elementIsVisible(elementEight), TIMEOUT);
+    await inputEight.getText().then(txt => {
+      assert.equal(txt, 'Добавить');
+    }).then(() => {
+      chai.request('http://crm2.local/')
+        .get('sections/sales/resident/clients')
+        .end((error, res) => {
+          res.body.should.have.status(200);
+          done();
+        });
     });
-    after(function() {
-        // driver.quit();
-    });
-    it('write moch data in main section client', function(done) {
-        driver.wait(until.elementLocated(By.css(addClientBtn)), 20000).then(element => {
-            return driver.wait(until.elementIsVisible(element), 20000);
-        }).then(button => {
-            button.click();
-        }).finally(done);
-
-        driver.wait(until.elementLocated(By.css(nameinput)), 20000).then(function(element) {
-            return driver.wait(until.elementIsVisible(element), 20000);
-        }).then(function(input) {
-            input.sendKeys(fakeData().companyName);
-        }).catch(function (error) {
-            console.log(error);
-        });
-
-        driver.wait(until.elementLocated(By.css(countryInputClient)), 20000).then(function (element) {
-            return driver.wait(until.elementIsVisible(element), 20000);
-        }).then(function(input) {
-            input.sendKeys(fakeData().country);
-        }).catch(function (error) {
-            console.log(error);
-        });
-        
-        driver.wait(until.elementLocated(By.css(cityInputClient)), 20000).then(function (element) {
-            return driver.wait(until.elementIsVisible(element), 20000);
-        }).then(function(input) {
-            input.sendKeys(fakeData().city);
-        }).catch(function (error) {
-            console.log(error);
-        });
-
-        driver.wait(until.elementLocated(By.css(addressInputClient)), 20000).then(function (element) {
-            return driver.wait(until.elementIsVisible(element), 20000);
-        }).then(function(input) {
-            input.sendKeys(fakeData().address);
-        }).catch(function (error) {
-            console.log(error);
-        });
-
-        driver.wait(until.elementLocated(By.name(wedsiteInputClient)), 20000).then(function (element) {
-            return driver.wait(until.elementIsVisible(element), 20000);
-        }).then(function(input) {
-            input.sendKeys(fakeData().address);
-        }).catch(function (error) {
-            console.log(error);
-        });
-
-        driver.wait(until.elementLocated(By.name(commentInputClient)), 20000).then(function (element) {
-            return driver.wait(until.elementIsVisible(element), 20000);
-        }).then(function(input) {
-            input.sendKeys(fakeData().comment);
-        }).catch(function (error) {
-            console.log(error);
-        });
-
-        driver.wait(until.elementLocated(By.css(createBtnClient)), 20000).then(element => {
-            return driver.wait(until.elementIsVisible(element), 20000);
-        }).then(button => {
-            button.getText().then(txt => {
-                console.log(txt);
-            });
-            button.click();
-        }).finally(done);
-    });
-
-    it.only('write mocha data in legal information client', async function (done) {
-
-        await driver.wait(until.elementLocated(By.css(addClientBtn)), 20000).then(element => {
-            return driver.wait(until.elementIsVisible(element), 20000);
-        }).then(button => {
-            button.click();
-        }).finally(done);
-
-        let elementClientBtn = driver.wait(until.elementLocated(By.css(addClientBtn)), 20000);
-        elementClientBtn;
-
-        await driver.wait(until.elementLocated(By.css(tabLegalInfo)), 20000).then(element => {
-            return driver.wait(until.elementIsVisible(element), 20000);
-        }).then(button => {
-            button.click();
-        }).finally(done);
-
-        await driver.wait(until.elementLocated(By.css(suggestionAddress)), 20000).then(element => {
-            return driver.wait(until.elementIsVisible(element), 20000);
-        }).then(input => {
-            input.sendKeys(fakeData().address);
-        }).finally(done);
-
-        // driver.wait(until.elementLocated(By.css(suggestionOGRN)), 20000).then(element => {
-        //     return driver.wait(until.elementIsVisible(element), 20000);
-        // }).then(input => {
-        //     input.sendKeys(fakeData().ogrn);
-        // }).finally(done);
-
-        // driver.wait(until.elementLocated(By.css(suggestion_inn)), 20000).then(element => {
-        //     return driver.wait(until.elementIsVisible(element), 20000);
-        // }).then(input => {
-        //     input.sendKeys(fakeData().inn);
-        // }).finally(done);
-
-        // driver.wait(until.elementLocated(By.css(suggestion_state_registration_date)), 20000).then(element => {
-        //     return driver.wait(until.elementIsVisible(element), 20000);
-        // }).then(input => {
-        //     input.sendKeys(fakeData().date_registration);
-        // }).finally(done);
-
-        // driver.wait(until.elementLocated(By.css(suggestion_kpp)), 20000).then(element => {
-        //     return driver.wait(until.elementIsVisible(element), 20000);
-        // }).then(input => {
-        //     input.sendKeys(fakeData().KPP);
-        // }).finally(done);
-        
-        // driver.wait(until.elementLocated(By.css(suggestion_opf_code)), 20000).then(element => {
-        //     return driver.wait(until.elementIsVisible(element), 20000);
-        // }).then(input => {
-        //     input.sendKeys(fakeData().code_OPF);
-        // }).finally(done);
-        
-        // driver.wait(until.elementLocated(By.css(suggestion_okved)), 20000).then(element => {
-        //     return driver.wait(until.elementIsVisible(element), 20000);
-        // }).then(input => {
-        //     input.sendKeys(fakeData().code_OKVED);
-        // }).finally(done);
-        
-        // driver.wait(until.elementLocated(By.css(suggestion_management_name)), 20000).then(element => {
-        //     return driver.wait(until.elementIsVisible(element), 20000);
-        // }).then(input => {
-        //     input.sendKeys(fakeData().general_director);
-        // }).finally(done);
-    });
+    await inputEight.click();
+    await driver.executeScript(scriptToExecute);
+    let logs =  await driver.manage().logs().get(levelLogging);
+    await console.log(logs);
+  });
 });
+

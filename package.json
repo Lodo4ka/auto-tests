@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "driver=chrome mocha './test/**/*.spec.js'"
+    "test": "driver=chrome mocha './test/**/*.spec.js' --timeout 100000"
   },
   "keywords": [],
   "author": "",
@@ -12,15 +12,16 @@
   "dependencies": {
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.0.0",
     "faker": "^4.1.0",
+    "http-proxy": "^1.17.0",
     "mocha": "^5.2.0",
     "selenium-webdriver": "^3.6.0",
-    "webdrivercss": "github:visualregressiontesting/webdrivercss",
-    "webdriverio": "^4.13.1"
+    "sinon": "^6.1.4"
   },
   "devDependencies": {
     "chai-webdriver-exec": "^1.0.0",
     "mochawesome": "^3.0.2",
-    "webdriverajax": "^2.2.0"
+    "prettier": "^1.14.0"
   }
 }
