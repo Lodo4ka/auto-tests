@@ -1,10 +1,8 @@
 const path = require("path");
 let initDriver;
 if(process.env.driver === "firefox") {
-  // driver = require("../driverFirefox.js");
 }
 if(process.env.driver === "chrome") {
-  // driver = require("../driverChrome.js").driver;
   initDriver = require("../driverChrome.js").initDriver;
 }
 const By = require("selenium-webdriver").By;

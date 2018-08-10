@@ -3,25 +3,27 @@ const fakeData = require("../../../../config/fake_data.js");
 const LoginBasic = require("../../Auth/LoginBasic.spec.js");
 const path = require("path");
 let driver;
-if (process.env.driver === "firefox") {
-  driver = require("../../driverFirefox.js");
-}
-if (process.env.driver === "chrome") {
-  driver = require("../../driverChrome.js");
-}
+let defaultProxy;
 const { it, after, before, describe } = require("selenium-webdriver/testing");
 const By = require("selenium-webdriver").By;
 const until = require("selenium-webdriver").until;
+const chai = require("chai");
 const companiesUrl = require(path.relative("./", "../../../../config/login.js")).companiesUrl;
 const inputsCompanies = require("../../../../utils/selectors.js").inputsCompanies;
 const addBtnCompanies = require("../../../../utils/selectors.js").addBtnCompanies;
 const tabCompanies = require("../../../../utils/selectors.js").tabCompanies;
-const appendBtnCompanies = require("../../../../utils/selectors.js").appendBtnCompanies;
-// const selectsCompanies = require("../../../../utils/selectors.js").selectsCompanies;
+const TestHelper = require("../../../../utils/TestHelper");
+const mlog = require("mocha-logger");
+const  assert = chai.assert;
+let levelLogging = require("selenium-webdriver").logging.Type.BROWSER;
 
-describe("written moch data in Companies section", function () {
+
+
+describe.only("written moch data in Companies section", function () {
   before(async function(done) {
-    await LoginBasic();
+    let result = await LoginBasic();
+    driver = result.driver;
+    defaultProxy = result.defaultProxy;
     await driver.get(companiesUrl);
     await driver
       .manage()
@@ -31,12 +33,15 @@ describe("written moch data in Companies section", function () {
     done();
   });
 
-  after(async function() {
-    // await driver.close();
-    // await driver.quit();
+  after(async function(done) {
+    await defaultProxy.closeProxies();
+    await defaultProxy.end();
+    await driver.close();
+    await driver.quit();
+    done();
   });
 
-  it("write moch data to add company", async function () {
+  it.only("write moch data to add company", async function () {
 
     let page = 0;
     let pageInput = 0;
@@ -60,62 +65,61 @@ describe("written moch data in Companies section", function () {
 
     const tabsLocated = await driver.wait(until.elementsLocated(By.css(tabCompanies)), TIMEOUT);
 
-    (async function () {
-      const inputsInner = await driver.wait(
+    (async function() {
+      const elementsThird = await driver.wait(
         until.elementsLocated(
           By.css(
-            "form.form-horizontal input:not([type=hidden]), form.form-horizontal textarea"
+            "form.form-horizontal input, form.form-horizontal textarea"
           )
         ),
         TIMEOUT
       );
-      for (let i = 0; i <= inputsInner.length - 1; i++) {
-        let result = await driver
-          .wait(until.elementIsVisible(inputsInner[i]), TIMEOUT);
-        if(result !== undefined) {
-          pageIndex++;
-          console.log(`pageIndex: ${pageIndex}`);
-        }
+      for (let i = 0; i <= elementsThird.length - 1; i++) {
+        await driver
+          .wait(until.elementIsVisible(inputsLocated[i]), TIMEOUT)
+          .then(bool => {
+            if (bool) {
+              pageIndex++;
+            }
+          });
       }
     })();
 
-    (async function () {
+    (async function() {
       for (let i = 0; i <= tabsLocated.length; i++) {
         tabCount = i;
       }
     })();
 
-    (async function () {
-      let appendBtnLocated = await driver.wait(until.elementLocated(By.css(appendBtnCompanies)), TIMEOUT);
-      let appendBtn = await driver.wait(until.elementIsVisible(appendBtnLocated), TIMEOUT);
-      await appendBtn.click();
-    })();
-
     for (let i = 0; i <= inputsLocated.length - 1; i++) {
       await driver.wait(until.elementIsVisible(inputsLocated[i]), TIMEOUT);
+      await inputsLocated[i].getAttribute("name");
       await inputsLocated[i].sendKeys(fakeData().comment);
       pageInput = i;
-      console.log(`This pageInput: ${pageInput}`);
-      if(pageInput >= pageIndex - 1) {
-        if(page < tabCount - 1) {
+      if (pageInput >= pageIndex - 1) {
+        if (page < tabCount - 1) {
           await tabsLocated[page + 1].click();
-          await page++;
+          page++;
         }
       }
     }
 
+    await driver.executeScript(`
+      const form = document.querySelector('.form-horizontal');
+      form.submit();
+    `);
 
-    // async function driverWaitAndSelectvalue(element) {
-    //   const elementsSelect = await driver.wait(
-    //     until.elementsLocated(By.css(element)),
-    //     TIMEOUT
-    //   );
-    //   elementsSelect.forEach(async (element) => {
-    //     let select = await driver.wait(until.elementIsVisible(element), TIMEOUT);
-    //     select.selectedOptions
-    //     await select.select("2");
-    //   });
-    // }
+    let har = await defaultProxy.getHar();
+    console.log("Logs from browsermob:");
+    TestHelper.getRequestUrls(har.log.entries);
+    assert.isOk((har.log.entries.filter(obj => {
+      return obj.request.method === "POST"
+            && obj.request.url === "http://crm2.local/api/sales/arc/companies";
+    })).length !== 0, mlog.success("test pass!!"));
+    await driver.manage().logs().get(levelLogging).then(logs => {
+      console.log("Logs from Browser:");
+      console.log(logs);
+    });
 
   });
 } );

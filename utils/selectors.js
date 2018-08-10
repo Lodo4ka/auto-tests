@@ -38,6 +38,8 @@ module.exports = {
   tabSalesStat: "[href=\"#tab-group-9\"]",
   tabGenPro: "[href=\"#tab-group-10\"]",
   saveBtnSeasonality: "#seasonalityForm button",
+  seasonalitySelectCompany: ".form-control.select_filter>option[value=\"6\"]",
+  seasonalitySelectCompanyBasic: ".form-control.select_filter",
   inputsSeasonality: "#seasonalityForm input:not([type=\"hidden\"])",
   addBtnProject: "button[data-toggle=\"modal\"]",
   inputsProject1: ".form-horizontal .panel-body input[name=\"name\"]",
