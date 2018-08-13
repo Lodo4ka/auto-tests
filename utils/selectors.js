@@ -38,7 +38,6 @@ module.exports = {
   tabSalesStat: "[href=\"#tab-group-9\"]",
   tabGenPro: "[href=\"#tab-group-10\"]",
   saveBtnSeasonality: "#seasonalityForm button",
-  seasonalitySelectCompany: ".form-control.select_filter>option[value=\"6\"]",
   seasonalitySelectCompanyBasic: ".form-control.select_filter",
   inputsSeasonality: "#seasonalityForm input:not([type=\"hidden\"])",
   addBtnProject: "button[data-toggle=\"modal\"]",
@@ -54,15 +53,15 @@ module.exports = {
     ".form-horizontal .panel-body #select2-matching_status_id-3j-container",
   spanProject4:
     ".form-horizontal .panel-body #select2-subdivision_id-85-container",
-  spanProject5:
-    ".form-horizontal .panel-body #select2-sale_status_id-z3-container",
-  spanProjectSelection:
-    ".form-horizontal .panel-body .selection span[aria-activedescendant=\"select2-stage_id-lg-result-gxhh-8\"] span",
+  spanProject5: ".form-horizontal .panel-body #select2-sale_status_id-z3-container",
+  spanProjectSelection: ".form-horizontal .panel-body .selection span[aria-activedescendant=\"select2-stage_id-lg-result-gxhh-8\"] span",
   addProjectBtn: ".form-horizontal .panel-footer .col-lg-2 button",
   printBtnProject: "#printTableProjects",
   inputsCompanies: "form.form-horizontal input:not([type=hidden]), form.form-horizontal textarea",
   selectsCompanies: "form.form-horizontal select",
   addBtnCompanies: "button[data-target=\"#modalAddCompany\"]",
   tabCompanies: "a[href=\"#tab-group-1\"], a[href=\"#tab-group-6\"]",
-  appendBtnCompanies: ".form-group .btn-group .btn.btn-success"
+  appendBtnCompanies: ".form-group .btn-group .btn.btn-success",
+  selectCompaniesTypeOfCompany: "//div[@id='modalAddCompany']/div[@role='document']//form[@role='form']/div[@class='panel-body']/div/div[1]/div/div//select[@name='5']/option[@value='6']",
+  selectOptionCompaniesStatus: "//div[@id='modalAddCompany']/div[@role='document']//form[@role='form']/div[@class='panel-body']/div/div[1]/div/div//select[@name='6']/option[@value='19']"
 };

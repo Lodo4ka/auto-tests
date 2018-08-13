@@ -12,6 +12,8 @@ const companiesUrl = require(path.relative("./", "../../../../config/login.js"))
 const inputsCompanies = require("../../../../utils/selectors.js").inputsCompanies;
 const addBtnCompanies = require("../../../../utils/selectors.js").addBtnCompanies;
 const tabCompanies = require("../../../../utils/selectors.js").tabCompanies;
+const selectCompaniesTypeOfCompany = require("../../../../utils/selectors.js").selectCompaniesTypeOfCompany;
+const selectOptionCompaniesStatus = require("../../../../utils/selectors.js").selectOptionCompaniesStatus;
 const TestHelper = require("../../../../utils/TestHelper");
 const mlog = require("mocha-logger");
 const  assert = chai.assert;
@@ -29,7 +31,6 @@ describe.only("written moch data in Companies section", function () {
       .manage()
       .window()
       .maximize();
-    await driver.manage().deleteAllCookies();
     done();
   });
 
@@ -91,6 +92,18 @@ describe.only("written moch data in Companies section", function () {
       }
     })();
 
+    const selectCompaniesLocatedTypeOfCompany =
+      await driver.wait(until.elementLocated(By.xpath(selectCompaniesTypeOfCompany)), TIMEOUT);
+    const selectCompaniesTypeOfCompanyVisible =
+      await driver.wait(until.elementIsVisible(selectCompaniesLocatedTypeOfCompany), TIMEOUT);
+    selectCompaniesTypeOfCompanyVisible.click();
+
+    const selectOptionCompaniesStatusVisible =
+      await driver.wait(until.elementLocated(By.xpath(selectOptionCompaniesStatus)), TIMEOUT);
+    const selectOptionCompaniesStatusLocated =
+      await driver.wait(until.elementIsVisible(selectOptionCompaniesStatusVisible), TIMEOUT);
+    selectOptionCompaniesStatusLocated.click();
+
     for (let i = 0; i <= inputsLocated.length - 1; i++) {
       await driver.wait(until.elementIsVisible(inputsLocated[i]), TIMEOUT);
       await inputsLocated[i].getAttribute("name");
@@ -120,6 +133,5 @@ describe.only("written moch data in Companies section", function () {
       console.log("Logs from Browser:");
       console.log(logs);
     });
-
   });
 } );
