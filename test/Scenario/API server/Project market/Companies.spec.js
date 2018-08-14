@@ -21,7 +21,7 @@ let levelLogging = require("selenium-webdriver").logging.Type.BROWSER;
 
 
 
-describe.only("written moch data in Companies section", function () {
+describe("written moch data in Companies section", function () {
   before(async function(done) {
     let result = await LoginBasic();
     driver = result.driver;
@@ -42,7 +42,7 @@ describe.only("written moch data in Companies section", function () {
     done();
   });
 
-  it.only("write moch data to add company", async function () {
+  it("write moch data to add company", async function () {
 
     let page = 0;
     let pageInput = 0;
@@ -127,7 +127,7 @@ describe.only("written moch data in Companies section", function () {
     TestHelper.getRequestUrls(har.log.entries);
     assert.isOk((har.log.entries.filter(obj => {
       return obj.request.method === "POST"
-            && obj.request.url === "http://crm2.local/api/sales/arc/companies";
+        && obj.request.url === "http://crm2.local/api/sales/arc/companies";
     })).length !== 0, mlog.success("test pass!!"));
     await driver.manage().logs().get(levelLogging).then(logs => {
       console.log("Logs from Browser:");

@@ -1,137 +1,95 @@
-[INFO  2018-08-13T11:23:01,282 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.4 
-[INFO  2018-08-13T11:23:01,309 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
-[INFO  2018-08-13T11:23:01,335 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
-[INFO  2018-08-13T11:23:01,414 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:8080 
-[INFO  2018-08-13T11:23:13,502 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Starting proxy at address: 0.0.0.0/0.0.0.0:8081 
-[INFO  2018-08-13T11:23:13,527 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy listening with TCP transport 
-[INFO  2018-08-13T11:23:13,564 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy started at address: /0:0:0:0:0:0:0:0:8081 
-[INFO  2018-08-13T11:23:15,788 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Shutting down proxy server gracefully 
-[INFO  2018-08-13T11:23:15,788 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Closing all channels (graceful) 
-[INFO  2018-08-13T11:23:15,792 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-19) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T11:23:17,998 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Done shutting down proxy server 
-[INFO  2018-08-13T11:23:39,636 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Starting proxy at address: 0.0.0.0/0.0.0.0:8082 
-[INFO  2018-08-13T11:23:39,637 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy listening with TCP transport 
-[INFO  2018-08-13T11:23:39,638 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy started at address: /0:0:0:0:0:0:0:0:8082 
-[INFO  2018-08-13T11:23:43,950 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Shutting down proxy server gracefully 
-[INFO  2018-08-13T11:23:43,950 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Closing all channels (graceful) 
-[INFO  2018-08-13T11:23:43,952 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-19) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T11:23:46,155 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Done shutting down proxy server 
-[INFO  2018-08-13T11:24:09,068 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Starting proxy at address: 0.0.0.0/0.0.0.0:8083 
-[INFO  2018-08-13T11:24:09,068 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Proxy listening with TCP transport 
-[INFO  2018-08-13T11:24:09,069 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Proxy started at address: /0:0:0:0:0:0:0:0:8083 
-[INFO  2018-08-13T11:24:11,016 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Shutting down proxy server gracefully 
-[INFO  2018-08-13T11:24:11,016 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Closing all channels (graceful) 
-[INFO  2018-08-13T11:24:11,018 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-18) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T11:24:13,221 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Done shutting down proxy server 
-[INFO  2018-08-13T11:24:41,862 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Starting proxy at address: 0.0.0.0/0.0.0.0:8084 
-[INFO  2018-08-13T11:24:41,863 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy listening with TCP transport 
-[INFO  2018-08-13T11:24:41,864 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy started at address: /0:0:0:0:0:0:0:0:8084 
-[INFO  2018-08-13T11:24:46,463 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Shutting down proxy server gracefully 
-[INFO  2018-08-13T11:24:46,463 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Closing all channels (graceful) 
-[INFO  2018-08-13T11:24:46,464 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-17) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T11:24:48,668 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Done shutting down proxy server 
-[INFO  2018-08-13T11:29:14,920 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Starting proxy at address: 0.0.0.0/0.0.0.0:8085 
-[INFO  2018-08-13T11:29:14,921 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy listening with TCP transport 
-[INFO  2018-08-13T11:29:14,921 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy started at address: /0:0:0:0:0:0:0:0:8085 
-[INFO  2018-08-13T11:29:19,257 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Shutting down proxy server gracefully 
-[INFO  2018-08-13T11:29:19,257 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Closing all channels (graceful) 
-[INFO  2018-08-13T11:29:19,258 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-19) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T11:29:21,466 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Done shutting down proxy server 
-[INFO  2018-08-13T11:29:49,474 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Starting proxy at address: 0.0.0.0/0.0.0.0:8086 
-[INFO  2018-08-13T11:29:49,475 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Proxy listening with TCP transport 
-[INFO  2018-08-13T11:29:49,475 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Proxy started at address: /0:0:0:0:0:0:0:0:8086 
-[INFO  2018-08-13T11:29:53,905 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Shutting down proxy server gracefully 
-[INFO  2018-08-13T11:29:53,905 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Closing all channels (graceful) 
-[INFO  2018-08-13T11:29:53,907 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-19) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T11:29:56,113 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Done shutting down proxy server 
-[INFO  2018-08-13T11:52:13,997 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Starting proxy at address: 0.0.0.0/0.0.0.0:8087 
-[INFO  2018-08-13T11:52:13,997 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy listening with TCP transport 
-[INFO  2018-08-13T11:52:13,998 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy started at address: /0:0:0:0:0:0:0:0:8087 
-[INFO  2018-08-13T11:52:18,401 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Shutting down proxy server gracefully 
-[INFO  2018-08-13T11:52:18,401 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Closing all channels (graceful) 
-[INFO  2018-08-13T11:52:18,402 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-21) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T11:52:20,607 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Done shutting down proxy server 
-[INFO  2018-08-13T11:52:40,091 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Starting proxy at address: 0.0.0.0/0.0.0.0:8088 
-[INFO  2018-08-13T11:52:40,092 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy listening with TCP transport 
-[INFO  2018-08-13T11:52:40,092 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy started at address: /0:0:0:0:0:0:0:0:8088 
-[INFO  2018-08-13T11:52:41,989 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Shutting down proxy server gracefully 
-[INFO  2018-08-13T11:52:41,989 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Closing all channels (graceful) 
-[INFO  2018-08-13T11:52:41,989 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-20) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T11:52:44,193 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Done shutting down proxy server 
-[INFO  2018-08-13T11:52:55,868 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Starting proxy at address: 0.0.0.0/0.0.0.0:8089 
-[INFO  2018-08-13T11:52:55,868 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Proxy listening with TCP transport 
-[INFO  2018-08-13T11:52:55,869 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Proxy started at address: /0:0:0:0:0:0:0:0:8089 
-[INFO  2018-08-13T11:53:00,164 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Shutting down proxy server gracefully 
-[INFO  2018-08-13T11:53:00,164 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Closing all channels (graceful) 
-[INFO  2018-08-13T11:53:00,167 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-21) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T11:53:02,371 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Done shutting down proxy server 
-[INFO  2018-08-13T11:54:34,518 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Starting proxy at address: 0.0.0.0/0.0.0.0:8090 
-[INFO  2018-08-13T11:54:34,518 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Proxy listening with TCP transport 
-[INFO  2018-08-13T11:54:34,519 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Proxy started at address: /0:0:0:0:0:0:0:0:8090 
-[INFO  2018-08-13T11:54:36,990 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Shutting down proxy server gracefully 
-[INFO  2018-08-13T11:54:36,990 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Closing all channels (graceful) 
-[INFO  2018-08-13T11:54:36,991 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-16) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T11:54:39,194 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Done shutting down proxy server 
-[INFO  2018-08-13T12:14:31,824 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Starting proxy at address: 0.0.0.0/0.0.0.0:8091 
-[INFO  2018-08-13T12:14:31,825 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy listening with TCP transport 
-[INFO  2018-08-13T12:14:31,825 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy started at address: /0:0:0:0:0:0:0:0:8091 
-[INFO  2018-08-13T12:14:33,770 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Shutting down proxy server gracefully 
-[INFO  2018-08-13T12:14:33,770 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Closing all channels (graceful) 
-[INFO  2018-08-13T12:14:33,771 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-18) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T12:14:35,974 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Done shutting down proxy server 
-[INFO  2018-08-13T12:15:46,419 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Starting proxy at address: 0.0.0.0/0.0.0.0:8092 
-[INFO  2018-08-13T12:15:46,419 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy listening with TCP transport 
-[INFO  2018-08-13T12:15:46,420 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy started at address: /0:0:0:0:0:0:0:0:8092 
-[INFO  2018-08-13T12:15:48,386 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Shutting down proxy server gracefully 
-[INFO  2018-08-13T12:15:48,387 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Closing all channels (graceful) 
-[INFO  2018-08-13T12:15:48,388 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-17) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T12:15:50,593 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Done shutting down proxy server 
-[INFO  2018-08-13T12:17:22,141 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Starting proxy at address: 0.0.0.0/0.0.0.0:8093 
-[INFO  2018-08-13T12:17:22,141 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy listening with TCP transport 
-[INFO  2018-08-13T12:17:22,142 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy started at address: /0:0:0:0:0:0:0:0:8093 
-[INFO  2018-08-13T12:17:24,042 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Shutting down proxy server gracefully 
-[INFO  2018-08-13T12:17:24,042 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Closing all channels (graceful) 
-[INFO  2018-08-13T12:17:24,044 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-20) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T12:17:26,248 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Done shutting down proxy server 
-[INFO  2018-08-13T12:18:22,770 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Starting proxy at address: 0.0.0.0/0.0.0.0:8094 
-[INFO  2018-08-13T12:18:22,771 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Proxy listening with TCP transport 
-[INFO  2018-08-13T12:18:22,771 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Proxy started at address: /0:0:0:0:0:0:0:0:8094 
-[INFO  2018-08-13T12:18:24,679 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Shutting down proxy server gracefully 
-[INFO  2018-08-13T12:18:24,679 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Closing all channels (graceful) 
-[INFO  2018-08-13T12:18:24,680 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-19) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T12:18:26,885 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Done shutting down proxy server 
-[INFO  2018-08-13T12:19:10,596 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Starting proxy at address: 0.0.0.0/0.0.0.0:8095 
-[INFO  2018-08-13T12:19:10,596 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Proxy listening with TCP transport 
-[INFO  2018-08-13T12:19:10,597 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Proxy started at address: /0:0:0:0:0:0:0:0:8095 
-[INFO  2018-08-13T12:19:15,619 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Shutting down proxy server gracefully 
-[INFO  2018-08-13T12:19:15,619 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Closing all channels (graceful) 
-[INFO  2018-08-13T12:19:15,620 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-21) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T12:19:17,824 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Done shutting down proxy server 
-[INFO  2018-08-13T12:26:35,770 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Starting proxy at address: 0.0.0.0/0.0.0.0:8096 
-[INFO  2018-08-13T12:26:35,770 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Proxy listening with TCP transport 
-[INFO  2018-08-13T12:26:35,771 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Proxy started at address: /0:0:0:0:0:0:0:0:8096 
-[INFO  2018-08-13T12:26:37,797 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Shutting down proxy server gracefully 
-[INFO  2018-08-13T12:26:37,797 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Closing all channels (graceful) 
-[INFO  2018-08-13T12:26:37,798 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-21) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T12:26:40,001 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Done shutting down proxy server 
-[INFO  2018-08-13T12:27:15,198 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Starting proxy at address: 0.0.0.0/0.0.0.0:8097 
-[INFO  2018-08-13T12:27:15,198 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Proxy listening with TCP transport 
-[INFO  2018-08-13T12:27:15,199 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Proxy started at address: /0:0:0:0:0:0:0:0:8097 
-[INFO  2018-08-13T12:27:19,923 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Shutting down proxy server gracefully 
-[INFO  2018-08-13T12:27:19,923 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Closing all channels (graceful) 
-[INFO  2018-08-13T12:27:19,924 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-21) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T12:27:22,127 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Done shutting down proxy server 
-[INFO  2018-08-13T12:28:00,993 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Starting proxy at address: 0.0.0.0/0.0.0.0:8098 
-[INFO  2018-08-13T12:28:00,994 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Proxy listening with TCP transport 
-[INFO  2018-08-13T12:28:00,994 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Proxy started at address: /0:0:0:0:0:0:0:0:8098 
-[INFO  2018-08-13T12:28:05,413 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Shutting down proxy server gracefully 
-[INFO  2018-08-13T12:28:05,413 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Closing all channels (graceful) 
-[INFO  2018-08-13T12:28:05,414 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-21) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T12:28:07,618 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Done shutting down proxy server 
-[INFO  2018-08-13T12:32:01,671 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Starting proxy at address: 0.0.0.0/0.0.0.0:8099 
-[INFO  2018-08-13T12:32:01,672 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Proxy listening with TCP transport 
-[INFO  2018-08-13T12:32:01,672 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Proxy started at address: /0:0:0:0:0:0:0:0:8099 
-[INFO  2018-08-13T12:32:06,263 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Shutting down proxy server gracefully 
-[INFO  2018-08-13T12:32:06,263 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Closing all channels (graceful) 
-[INFO  2018-08-13T12:32:06,264 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-21) Shutting down server group event loops (graceful) 
-[INFO  2018-08-13T12:32:08,470 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Done shutting down proxy server 
+[INFO  2018-08-14T17:19:56,095 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.4 
+[INFO  2018-08-14T17:19:56,122 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
+[INFO  2018-08-14T17:19:56,158 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
+[INFO  2018-08-14T17:19:56,245 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:8080 
+[INFO  2018-08-14T17:20:03,975 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Starting proxy at address: 0.0.0.0/0.0.0.0:8081 
+[INFO  2018-08-14T17:20:04,016 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Proxy listening with TCP transport 
+[INFO  2018-08-14T17:20:04,054 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Proxy started at address: /0:0:0:0:0:0:0:0:8081 
+[INFO  2018-08-14T17:21:49,809 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Starting proxy at address: 0.0.0.0/0.0.0.0:8082 
+[INFO  2018-08-14T17:21:49,828 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Proxy listening with TCP transport 
+[INFO  2018-08-14T17:21:49,829 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Proxy started at address: /0:0:0:0:0:0:0:0:8082 
+[INFO  2018-08-14T17:23:00,744 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Starting proxy at address: 0.0.0.0/0.0.0.0:8083 
+[INFO  2018-08-14T17:23:00,745 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy listening with TCP transport 
+[INFO  2018-08-14T17:23:00,745 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy started at address: /0:0:0:0:0:0:0:0:8083 
+[INFO  2018-08-14T17:54:14,356 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Starting proxy at address: 0.0.0.0/0.0.0.0:8084 
+[INFO  2018-08-14T17:54:14,357 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Proxy listening with TCP transport 
+[INFO  2018-08-14T17:54:14,357 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Proxy started at address: /0:0:0:0:0:0:0:0:8084 
+[INFO  2018-08-14T17:56:13,085 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Starting proxy at address: 0.0.0.0/0.0.0.0:8085 
+[INFO  2018-08-14T17:56:13,086 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy listening with TCP transport 
+[INFO  2018-08-14T17:56:13,086 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy started at address: /0:0:0:0:0:0:0:0:8085 
+[INFO  2018-08-14T17:56:18,492 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Shutting down proxy server gracefully 
+[INFO  2018-08-14T17:56:18,492 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Shutting down proxy server gracefully 
+[INFO  2018-08-14T17:56:18,492 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Shutting down proxy server gracefully 
+[INFO  2018-08-14T17:56:18,493 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Shutting down proxy server gracefully 
+[INFO  2018-08-14T17:56:18,492 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Shutting down proxy server gracefully 
+[INFO  2018-08-14T17:56:18,493 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Closing all channels (graceful) 
+[INFO  2018-08-14T17:56:18,493 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Closing all channels (graceful) 
+[INFO  2018-08-14T17:56:18,493 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Closing all channels (graceful) 
+[INFO  2018-08-14T17:56:18,493 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Closing all channels (graceful) 
+[INFO  2018-08-14T17:56:18,493 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Closing all channels (graceful) 
+[INFO  2018-08-14T17:56:18,497 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-16) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T17:56:18,497 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-17) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T17:56:18,497 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-18) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T17:56:18,497 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-19) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T17:56:18,497 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-21) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T17:56:20,701 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Done shutting down proxy server 
+[INFO  2018-08-14T17:56:20,701 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Done shutting down proxy server 
+[INFO  2018-08-14T17:56:20,701 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Done shutting down proxy server 
+[INFO  2018-08-14T17:56:20,702 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-19) Done shutting down proxy server 
+[INFO  2018-08-14T17:56:20,705 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-21) Done shutting down proxy server 
+[INFO  2018-08-14T18:02:05,138 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Starting proxy at address: 0.0.0.0/0.0.0.0:8086 
+[INFO  2018-08-14T18:02:05,139 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Proxy listening with TCP transport 
+[INFO  2018-08-14T18:02:05,140 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Proxy started at address: /0:0:0:0:0:0:0:0:8086 
+[INFO  2018-08-14T18:02:10,207 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Shutting down proxy server gracefully 
+[INFO  2018-08-14T18:02:10,207 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Closing all channels (graceful) 
+[INFO  2018-08-14T18:02:10,207 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-18) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T18:02:12,413 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-18) Done shutting down proxy server 
+[INFO  2018-08-14T18:13:02,358 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Starting proxy at address: 0.0.0.0/0.0.0.0:8087 
+[INFO  2018-08-14T18:13:02,359 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Proxy listening with TCP transport 
+[INFO  2018-08-14T18:13:02,359 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Proxy started at address: /0:0:0:0:0:0:0:0:8087 
+[INFO  2018-08-14T18:13:07,613 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Shutting down proxy server gracefully 
+[INFO  2018-08-14T18:13:07,613 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Closing all channels (graceful) 
+[INFO  2018-08-14T18:13:07,614 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-16) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T18:13:09,819 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Done shutting down proxy server 
+[INFO  2018-08-14T18:36:34,128 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Starting proxy at address: 0.0.0.0/0.0.0.0:8088 
+[INFO  2018-08-14T18:36:34,128 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy listening with TCP transport 
+[INFO  2018-08-14T18:36:34,129 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy started at address: /0:0:0:0:0:0:0:0:8088 
+[INFO  2018-08-14T18:36:39,354 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Shutting down proxy server gracefully 
+[INFO  2018-08-14T18:36:39,354 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Closing all channels (graceful) 
+[INFO  2018-08-14T18:36:39,355 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-17) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T18:36:41,561 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Done shutting down proxy server 
+[INFO  2018-08-14T18:45:57,002 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Starting proxy at address: 0.0.0.0/0.0.0.0:8089 
+[INFO  2018-08-14T18:45:57,002 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy listening with TCP transport 
+[INFO  2018-08-14T18:45:57,003 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy started at address: /0:0:0:0:0:0:0:0:8089 
+[INFO  2018-08-14T18:46:02,227 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Shutting down proxy server gracefully 
+[INFO  2018-08-14T18:46:02,227 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Closing all channels (graceful) 
+[INFO  2018-08-14T18:46:02,228 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-16) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T18:46:04,431 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Done shutting down proxy server 
+[INFO  2018-08-14T18:48:30,616 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Starting proxy at address: 0.0.0.0/0.0.0.0:8090 
+[INFO  2018-08-14T18:48:30,616 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy listening with TCP transport 
+[INFO  2018-08-14T18:48:30,617 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy started at address: /0:0:0:0:0:0:0:0:8090 
+[INFO  2018-08-14T18:48:35,926 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Shutting down proxy server gracefully 
+[INFO  2018-08-14T18:48:35,926 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Closing all channels (graceful) 
+[INFO  2018-08-14T18:48:35,927 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-16) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T18:48:38,231 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Done shutting down proxy server 
+[INFO  2018-08-14T18:49:17,840 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Starting proxy at address: 0.0.0.0/0.0.0.0:8091 
+[INFO  2018-08-14T18:49:17,841 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy listening with TCP transport 
+[INFO  2018-08-14T18:49:17,841 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-20) Proxy started at address: /0:0:0:0:0:0:0:0:8091 
+[INFO  2018-08-14T18:49:22,966 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Shutting down proxy server gracefully 
+[INFO  2018-08-14T18:49:22,966 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Closing all channels (graceful) 
+[INFO  2018-08-14T18:49:22,968 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-17) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T18:49:25,176 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Done shutting down proxy server 
+[INFO  2018-08-14T18:49:40,616 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Starting proxy at address: 0.0.0.0/0.0.0.0:8092 
+[INFO  2018-08-14T18:49:40,620 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Proxy listening with TCP transport 
+[INFO  2018-08-14T18:49:40,621 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-16) Proxy started at address: /0:0:0:0:0:0:0:0:8092 
+[INFO  2018-08-14T18:49:46,175 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Shutting down proxy server gracefully 
+[INFO  2018-08-14T18:49:46,176 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Closing all channels (graceful) 
+[INFO  2018-08-14T18:49:46,176 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-17) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T18:49:48,380 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Done shutting down proxy server 
+[INFO  2018-08-14T18:49:55,833 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Starting proxy at address: 0.0.0.0/0.0.0.0:8093 
+[INFO  2018-08-14T18:49:55,833 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy listening with TCP transport 
+[INFO  2018-08-14T18:49:55,834 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Proxy started at address: /0:0:0:0:0:0:0:0:8093 
+[INFO  2018-08-14T18:50:01,393 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Shutting down proxy server gracefully 
+[INFO  2018-08-14T18:50:01,393 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Closing all channels (graceful) 
+[INFO  2018-08-14T18:50:01,394 org.littleshoot.proxy.impl.ServerGroup] (qtp20111564-17) Shutting down server group event loops (graceful) 
+[INFO  2018-08-14T18:50:03,600 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp20111564-17) Done shutting down proxy server 

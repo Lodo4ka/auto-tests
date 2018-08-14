@@ -15,7 +15,6 @@ const profitabilityUrl = require("../../../../config/login").profitabilityUrl;
 const fakeData = require("../../../../config/fake_data");
 const assert = chai.assert;
 const TestHelper = require("../../../../utils/TestHelper");
-const mlog = require("mocha-logger");
 const TIMEOUT = 100000;
 
 describe("written moch data in form", function() {
@@ -40,7 +39,6 @@ describe("written moch data in form", function() {
   });
 
   it("write moch data in profitability", async function() {
-
     const buttonCreateReportLocated =
       await driver.wait(until.elementLocated(By.css(buttonCreateReport)), TIMEOUT);
     const buttonCreateReportVisible =
@@ -78,7 +76,9 @@ describe("written moch data in form", function() {
         assert.isOk((har.log.entries.filter(obj => {
           return obj.request.method === "POST"
           && obj.request.url === "http://crm2.local/sections/sales/resident/profitability";
-        })).length !== 0, mlog.success("test pass!!"));
+        })).length !== 0,
+        "test pass!!"
+        );
         driver.manage().logs().get(levelLogging).then(logs => {
           console.log("Logs from Browser:");
           console.log(logs);

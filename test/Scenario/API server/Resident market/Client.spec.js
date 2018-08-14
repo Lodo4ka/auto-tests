@@ -122,9 +122,7 @@ describe("written moch data in form when create client", function() {
           form.addEventListener('submit', function (event) {
             event.preventDefault();
             console.log('form submitted');
-            // form.submit();
           });
-          // button.click(); 
           form.submit();
           `);
         let har = await defaultProxy.getHar();

@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "driver=chrome mocha './test/**/*.spec.js' --timeout 100000 --reporter dot",
+    "test": "driver=chrome mocha './test/**/*.spec.js' --timeout 100000 --reporter mocha-reporter",
     "proxy": "node server.js",
     "start-browsermob": "sh ./browsermob-proxy-2.1.4/bin/browsermob-proxy"
   },
@@ -23,6 +23,7 @@
     "http-proxy": "^1.17.0",
     "mocha": "^5.2.0",
     "mocha-logger": "^1.0.6",
+    "mocha-reporter": "^0.1.1",
     "nodemon": "^1.18.3",
     "selenium-webdriver": "^3.6.0",
     "sinon": "^6.1.4"

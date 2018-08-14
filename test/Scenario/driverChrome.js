@@ -12,11 +12,6 @@ const seleniumProxy = require("selenium-webdriver/proxy");
 let defaultProxy = BrowserMob.createClient();
 let driver = {};
 
-// (async function () {
-//   await defaultProxy.start();
-//   let har = await defaultProxy.createHar();
-// })();
-
 async function initDriver () {
   return new Promise(async (resolve,reject) => {
     defaultProxy = BrowserMob.createClient();
@@ -37,17 +32,6 @@ async function initDriver () {
     resolve({driver, defaultProxy});
   });
 }
-
-// let driver = new webdriver.Builder()
-//   .withCapabilities({"browserName": "chrome",
-//     acceptSslCerts: true,
-//     acceptInsecureCerts: true})
-//   .setChromeOptions(optionsChrome)
-//   .forBrowser("chrome")
-//   .setProxy(seleniumProxy.manual({
-//     http: "localhost:" + port,
-//     https: "localhost:" + port }))
-//   .build();
 
 module.exports = {
   // driver,

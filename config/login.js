@@ -7,5 +7,7 @@ module.exports = {
   clientUrl: "http://crm2.local/sections/sales/resident/clients",
   seasonUrl: "http://crm2.local/sections/sales/resident/bonuscalc/planmanagment/seasonality",
   projectUrl: "http://crm2.local/sections/sales/project/projects",
-  companiesUrl: "http://crm2.local/sections/sales/project/companies"
+  companiesUrl: "http://crm2.local/sections/sales/project/companies",
+  contacsUrl: "http://crm2.local/sections/sales/project/contacts",
+  calculationsUrl: "http://crm2.local/calculations"
 };
