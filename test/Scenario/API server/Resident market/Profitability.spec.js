@@ -16,18 +16,25 @@ const fakeData = require("../../../../config/fake_data");
 const assert = chai.assert;
 const TestHelper = require("../../../../utils/TestHelper");
 const TIMEOUT = 100000;
+let connection;
+
 
 describe("written moch data in form", function() {
   before(async function(done) {
     let result = await LoginBasic();
     driver = result.driver;
     defaultProxy = result.defaultProxy;
+    connection = result.connection;
     await driver.get(profitabilityUrl);
     await driver
       .manage()
       .window()
       .maximize();
     done();
+    connection.connect((err) => {
+      if(err) throw err;
+      console.log("Connected!");
+    });
   });
 
   after(async function(done) {
@@ -63,6 +70,13 @@ describe("written moch data in form", function() {
         await driver.wait(until.elementIsVisible(contrDateToLocated), TIMEOUT);
     await contrDateToVisible.sendKeys("15.06.2015");
 
+    connection.query("SELECT * FROM tech_calculations ORDER BY id DESC LIMIT 1", function(error, result) {
+      if(error) {
+        throw error;
+      }
+      console.log(result);
+    });
+    
     await driver
       .wait(until.elementLocated(By.css(createBtn)), TIMEOUT)
       .then(async () => {
@@ -70,6 +84,7 @@ describe("written moch data in form", function() {
           let form = document.querySelector('form.form-horizontal');
           form.submit();
         `);
+
         let har = await defaultProxy.getHar();
         console.log("Logs from browsermob:");
         TestHelper.getRequestUrls(har.log.entries);

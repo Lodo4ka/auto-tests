@@ -15,10 +15,10 @@ const password = require(path.relative("./", "../../../config/login.js")).passwo
 
 module.exports = async function LoginBasic() {
   let result = await initDriver();
-  let {driver, defaultProxy} = result;
+  let {driver, defaultProxy, connection} = result;
   driver.get(url);
   await driver.findElement(By.name(nameInput)).sendKeys(login);
   await driver.findElement(By.name(passInput)).sendKeys(password);
   await driver.findElement(By.css(submitBtn)).click();
-  return {driver, defaultProxy};
+  return {driver, defaultProxy, connection};
 };

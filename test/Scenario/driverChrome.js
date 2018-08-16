@@ -9,8 +9,8 @@ preference.setLevel(
 optionsChrome.setLoggingPrefs(preference);
 const BrowserMob = require("browsermob-proxy-client");
 const seleniumProxy = require("selenium-webdriver/proxy");
+const mysql = require("mysql");
 let defaultProxy = BrowserMob.createClient();
-let driver = {};
 
 async function initDriver () {
   return new Promise(async (resolve,reject) => {
@@ -29,12 +29,17 @@ async function initDriver () {
       }))
       .forBrowser("chrome")
       .build();
-    resolve({driver, defaultProxy});
+    const connection = mysql.createConnection({
+      host: "localhost",
+      port: "3306",
+      user: "root",
+      database: "crm2",
+      password: "1"
+    });
+    resolve({driver, defaultProxy, connection});
   });
 }
 
 module.exports = {
-  // driver,
-  // defaultProxy,
   initDriver
 };
