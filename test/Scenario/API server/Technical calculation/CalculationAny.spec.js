@@ -51,8 +51,7 @@ describe("written mocha data in technical calculations section", function() {
     await done();
   });
 
-  it("write moch data in calculations section and check HTTP POST query", async function() {
-
+  it("write moch data in calculations any section and check HTTP POST query", async function() {
     await driver.executeScript(`
       let form = document.querySelector('form[action="/calculations"]');
       form.submit();
@@ -85,7 +84,6 @@ describe("written mocha data in technical calculations section", function() {
       })),
       TIMEOUT
     );
-
     (async function() {
       const inputsLocated = await driver.wait(
         until.elementsLocated(
@@ -200,29 +198,6 @@ describe("written mocha data in technical calculations section", function() {
       await driver.wait(until.elementIsVisible(buttonAddTriplexLocated), TIMEOUT);
     await buttonAddTriplexVisible.click();
 
-    const btnDeleteLocated =
-          await driver.wait(until.elementLocated(By.xpath(btnDeleteTriplex)), TIMEOUT);
-    const btnDelete =
-          await driver.wait(until.elementIsVisible(btnDeleteLocated), TIMEOUT);
-    await btnDelete.click();
-
-    const btnDeleteTriplexConfirmLocated =
-          await driver.wait(until.elementLocated(By.css(btnDeleteTriplexConfirm)), TIMEOUT);
-    const btnDeleteTriplexConfirmVisible =
-          await driver.wait(until.elementIsVisible(btnDeleteTriplexConfirmLocated), TIMEOUT);
-    await btnDeleteTriplexConfirmVisible.click();
-
-    await driver.executeScript(`
-      let btn = document.querySelector(".btnDeleteGlass.btn.btn-danger2");
-      btn.click();
-    `);
-
-    const btnClimaGuardConfirmLocated =
-          await driver.wait(until.elementLocated(By.css(btnClimaGuardConfirm)), TIMEOUT);
-    const btnClimaGuardConfirmVisible =
-          await driver.wait(until.elementIsVisible(btnClimaGuardConfirmLocated), TIMEOUT);
-    await btnClimaGuardConfirmVisible.click();
-
     await driver.executeScript(`
       let select = document.querySelector("#selectWindowsStructurals");
       let option = select[select.length - 1];
@@ -230,34 +205,33 @@ describe("written mocha data in technical calculations section", function() {
     `);
 
     await driver.executeScript(`
-      let btn1 =  document.querySelector("button.btnDeleteGlass.btn.btn-danger2");
-      btn1.click();
+      const addGLassPacket = document.querySelector("a[data-target='#modalGlassPackagings']");
+      addGLassPacket.click();
     `);
 
     await driver.executeScript(`
-      let addBtn = document.querySelector(".btn.btn-success.pull-right.btn-xs");
-      addBtn.click();
+      const addPack = document.querySelector("#divModals #modalGlassPackagings tr:nth-of-type(3) [data-hash]");
+      addPack.click();
     `);
 
     await driver.executeScript(`
-       let section1 = document.querySelector("#tableModalFrames_wrapper > .row:nth-child(2) [class='col-sm-12'] #tableModalFrames tbody > [role='row']:nth-child(1) > td:nth-child(6) .form-control")
-       let option2 = section1[1];
-       option2.setAttribute("selected", true);
+      let addArrived = document.querySelector("#divDelivery [data-toggle]");
+      addArrived.click();
     `);
 
     await driver.executeScript(`
-      let btnPlus = document.querySelector("#tableModalFrames_wrapper [role='row']:nth-of-type(1) [data-hash]");
-      btnPlus.click();
+      const inputCostCar =  document.querySelector("input[placeholder='Стоимость машины для клиента']");
+      inputCostCar.value = 100;
     `);
 
     await driver.executeScript(`
-      let selectBtn = document.querySelector("#divProductions:nth-of-type(4) [data-toggle]");
-      selectBtn.click();
+      const inputBulkCar = document.querySelector("input[placeholder='Объём 1-й машины, м2'");
+      inputBulkCar.value = 100;
     `);
 
     await driver.executeScript(`
-      let complexFigureCheckbox = document.querySelector("#divModals #modalAddProductions tr:nth-of-type(1) [data-hash]");
-      complexFigureCheckbox.click();
+      const buttonAddDelivery =  document.querySelector("#buttonAddDelivery");
+      buttonAddDelivery.click();
     `);
 
     let har = await defaultProxy.getHar();
@@ -265,35 +239,32 @@ describe("written mocha data in technical calculations section", function() {
     TestHelper.getRequestUrls(har.log.entries);
 
     assert.isOk((har.log.entries.filter(obj => {
-      return  obj.request.method === "POST" && obj.request.url === "http://crm2.local/login";
+      return  obj.request.method === "POST" && obj.request.url === "http://crm2.local/login"
+        && obj.response.status === 302 && obj.response.statusText === "Found";
     })).length !== 0, "test pass POST http://crm2.local/login!!");
 
     assert.isOk((har.log.entries.filter(obj => {
-      return  obj.request.method === "POST" && obj.request.url === "http://crm2.local/calculations";
+      return  obj.request.method === "POST" && obj.request.url === "http://crm2.local/calculations"
+        && obj.response.status === 302 && obj.response.statusText === "Found";
     })).length !== 0, "test pass POST http://crm2.local/calculations!!");
 
     assert.isOk((har.log.entries.filter(obj => {
-      return  obj.request.method === "POST" && obj.request.url === "http://crm2.local/calculations/triplex";
-    })).length !== 0, "test pass POST http://crm2.local/calculations/triplex!!");
-
-    assert.isOk((har.log.entries.filter(obj => {
-      return  obj.request.method === "POST" && obj.request.url === "http://crm2.local/calculations/add/glass";
+      return  obj.request.method === "POST" && obj.request.url === "http://crm2.local/calculations/add/glass"
+        && obj.response.status === 200 && obj.response.statusText === "OK";
     })).length !== 0, "test pass POST http://crm2.local/calculations/add/glass!!");
 
     assert.isOk((har.log.entries.filter(obj => {
-      return  obj.request.method === "DELETE" && obj.request.url === "http://crm2.local/calculations/triplex";
-    })).length !== 0, "test pass DELETE http://crm2.local/calculations/triplex!!");
+      return  obj.request.method === "POST" && obj.request.url === "http://crm2.local/calculations/triplex"
+        && obj.response.status === 200 && obj.response.statusText === "OK";
+    })).length !== 0, "test pass POST http://crm2.local/calculations/triplex!!");
 
     assert.isOk((har.log.entries.filter(obj => {
-      return  obj.request.method === "DELETE" && obj.request.url === "http://crm2.local/calculations/glass";
-    })).length !== 0, "test pass DELETE http://crm2.local/calculations/glass!!");
+      return  obj.request.method === "POST" && obj.request.url === "http://crm2.local/calculations/packagings"
+        && obj.response.status === 200 && obj.response.statusText === "OK";
+    })).length !== 0, "test pass POST http://crm2.local/calculations/packagings!!");
 
     assert.isOk((har.log.entries.filter(obj => {
-      return  obj.request.method === "POST" && obj.request.url === "http://crm2.local/calculations/wconditions";
-    })).length !== 0, "test pass POST http://crm2.local/calculations/wconditions!!");
-
-    assert.isOk((har.log.entries.filter(obj => {
-      return  obj.request.method === "POST" && obj.request.url === "http://crm2.local/calculations/add/material";
-    })).length !== 0, "test pass POST http://crm2.local/calculations/add/material!!");
+      return  obj.request.method === "POST" && obj.request.url === "http://crm2.local/calculations/delivery";
+    })).length !== 0, "test pass POST http://crm2.local/calculations/delivery!!");
   });
 });

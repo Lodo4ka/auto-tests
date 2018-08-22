@@ -9,5 +9,6 @@ module.exports = {
   projectUrl: "http://crm2.local/sections/sales/project/projects",
   companiesUrl: "http://crm2.local/sections/sales/project/companies",
   contacsUrl: "http://crm2.local/sections/sales/project/contacts",
-  calculationsUrl: "http://crm2.local/calculations"
+  calculationsUrl: "http://crm2.local/calculations",
+  adminUrl: "http://crm2.local/admin"
 };

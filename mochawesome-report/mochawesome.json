@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2018-08-16T15:52:14.849Z",
-    "end": "2018-08-16T15:52:37.991Z",
-    "duration": 23142,
+    "start": "2018-08-22T12:55:10.971Z",
+    "end": "2018-08-22T12:55:15.419Z",
+    "duration": 4448,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -19,7 +19,7 @@
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "86dd1667-93f7-4de7-87da-c5162dbf75ef",
+    "uuid": "a784943e-41da-432d-b84a-9622badb85a5",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,23 +28,23 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "79502cc0-ad5b-4695-b688-97aa83f1be0a",
-        "title": "written mocha data in technical calculations section",
-        "fullFile": "/home/user/Рабочий стол/auto-tests/crm2/test/Scenario/API server/Technical calculation/Calculation.spec.js",
-        "file": "/test/Scenario/API server/Technical calculation/Calculation.spec.js",
+        "uuid": "7c96f385-c918-4294-8b8a-c21072a58f1d",
+        "title": "check API server admin/departments section",
+        "fullFile": "/home/user/Рабочий стол/auto-tests/crm2/test/Scenario/API server/Administration panel/Department.spec.js",
+        "file": "/test/Scenario/API server/Administration panel/Department.spec.js",
         "beforeHooks": [
           {
             "title": "\"before all\" hook: ret",
-            "fullTitle": "written mocha data in technical calculations section \"before all\" hook: ret",
+            "fullTitle": "check API server admin/departments section \"before all\" hook: ret",
             "timedOut": false,
-            "duration": 1982,
+            "duration": 1835,
             "pass": false,
             "fail": false,
             "pending": false,
-            "code": "let result = await LoginBasic();\ndriver = result.driver;\ndefaultProxy = result.defaultProxy;\nconnection = result.connection;\nawait driver.get(calculationsUrl);\nawait driver\n  .manage()\n  .window()\n  .maximize();\ndone();",
+            "code": "let result = await LoginBasic();\ndriver = result.driver;\ndefaultProxy = result.defaultProxy;\nawait driver.get(adminUrl);\nawait driver\n  .manage()\n  .window()\n  .maximize();\ndone();",
             "err": {},
             "isRoot": false,
-            "uuid": "20d2e5a4-7f12-4604-8b71-6e0252516587",
+            "uuid": "9b9de54e-23c4-48d3-9d1f-888cf3637a6b",
             "isHook": true,
             "skipped": false
           }
@@ -52,47 +52,47 @@
         "afterHooks": [
           {
             "title": "\"after all\" hook: ret",
-            "fullTitle": "written mocha data in technical calculations section \"after all\" hook: ret",
+            "fullTitle": "check API server admin/departments section \"after all\" hook: ret",
             "timedOut": false,
-            "duration": 3531,
+            "duration": 2276,
             "pass": false,
             "fail": false,
             "pending": false,
-            "code": "await defaultProxy.closeProxies();\nawait defaultProxy.end();\nawait driver.close();\nawait driver.quit();\ndone();",
+            "code": "await defaultProxy.closeProxies();\nawait defaultProxy.end();\nawait driver.close();\nawait driver.quit();\nawait done();",
             "err": {},
             "isRoot": false,
-            "uuid": "62ab4a65-5c95-4693-82f9-bd9a897f0056",
+            "uuid": "e1f6d92c-1989-4e76-b73f-dd1e4b5a10d2",
             "isHook": true,
             "skipped": false
           }
         ],
         "tests": [
           {
-            "title": "write moch data in calculations section and check HTTP POST query",
-            "fullTitle": "written mocha data in technical calculations section write moch data in calculations section and check HTTP POST query",
+            "title": "create department and check request POST and response",
+            "fullTitle": "check API server admin/departments section create department and check request POST and response",
             "timedOut": false,
-            "duration": 17622,
+            "duration": 334,
             "state": "passed",
             "speed": "slow",
             "pass": true,
             "fail": false,
             "pending": false,
-            "code": "await driver.executeScript(`\n  let form = document.querySelector('form[action=\"/calculations\"]');\n  form.submit();\n`);\nlet page = 0;\nlet pageInput = 0;\nlet pageIndex = 0;\nlet tabCount = 0;\nconst inputstextareaNumberLocated = await driver.wait(\n  until.elementsLocated(\n    By.css(\n      \"#formCalculationInfo .col-sm-6 input[type=\\\"number\\\"], #formCalculationInfo .form-group textarea\"\n    )\n  ),\n  TIMEOUT\n);\nconst tabsCalculations = await driver.wait(\n  until.elementsLocated(By.js(() => {\n    let newArray = [];\n    let nodeList =  document.querySelectorAll(\"[data-toggle=\\\"tab\\\"]\");\n    nodeList.forEach(function(element) {\n      if(element.parentNode.style.display !== \"none\" && !element.closest(\"#divTabGlass\")) {\n        newArray.push(element);\n      }\n    });\n    return newArray;\n  })),\n  TIMEOUT\n);\n(async function() {\n  const inputsLocated = await driver.wait(\n    until.elementsLocated(\n      By.css(\n        \"#formCalculationInfo .col-sm-6 input[type=\\\"number\\\"], #formCalculationInfo .form-group textarea\"\n      )\n    ),\n    TIMEOUT\n  );\n  for (let i = 0; i <= inputsLocated.length - 1; i++) {\n    await driver\n      .wait(until.elementIsVisible(inputstextareaNumberLocated[i]), TIMEOUT)\n      .then(bool => {\n        if (bool) {\n          pageIndex++;\n        }\n      });\n  }\n})();\n(async function() {\n  for (let i = 0; i <= tabsCalculations.length; i++) {\n    tabCount = i;\n  }\n})();\nconst optionFormaLocated = await driver.wait(until.elementLocated(By.xpath(formaCompleteProduct)), TIMEOUT);\nconst optionFormaVisible = await driver.wait(until.elementIsVisible(optionFormaLocated), TIMEOUT);\nawait optionFormaVisible.click();\nfor (let i = 0; i <= inputstextareaNumberLocated.length - 1; i++) {\n  await driver.wait(until.elementIsVisible(inputstextareaNumberLocated[i]), TIMEOUT);\n  await inputstextareaNumberLocated[i].getAttribute(\"name\");\n  await inputstextareaNumberLocated[i].sendKeys(fakeData().number);\n  pageInput = i;\n  if (pageInput >= pageIndex - 1) {\n    if (page < tabCount - 1) {\n      await tabsCalculations[page + 1].click();\n      page++;\n    }\n  }\n}\nconst plusGlassLocated =\n  await driver.wait(until.elementLocated(By.css(plusGlass)), TIMEOUT);\nconst plusGlassVisible =\n  await driver.wait(until.elementIsVisible(plusGlassLocated), TIMEOUT);\nawait plusGlassVisible.click();\nconst glassOptionlocated =\n  await driver.wait(until.elementLocated(By.xpath(glassOption)), TIMEOUT);\nconst glassOptionVisible =\n  await driver.wait(until.elementIsVisible(glassOptionlocated), TIMEOUT);\nawait glassOptionVisible.click();\nawait driver.executeScript(`\n  let checkbox = document.querySelector('input[name=\"take\"]');\n  checkbox.click();\n`);\nconst addBtnLocated =\n  await driver.wait(until.elementLocated(By.css(buttonAddGlass)), TIMEOUT);\nconst addBtnVisible =\n  await driver.wait(until.elementIsVisible(addBtnLocated), TIMEOUT);\nawait addBtnVisible.click();\nconst triplexBtnLocated =\n  await driver.wait(until.elementLocated(By.xpath(triplexBtn)), TIMEOUT);\nconst triplexBtnVisible =\n  await driver.wait(until.elementIsVisible(triplexBtnLocated), TIMEOUT);\nawait triplexBtnVisible.click();\nconst nameInputLocated =\n  await driver.wait(until.elementLocated(By.xpath(nameInput)), TIMEOUT);\nconst nameInputVisible =\n  await driver.wait(until.elementIsVisible(nameInputLocated), TIMEOUT);\nawait nameInputVisible.sendKeys(fakeData().companyName);\nconst glass1OptionLocated =\n  await driver.wait(until.elementLocated(By.xpath(glass1Option)), TIMEOUT);\nconst glass1OptionVisible =\n  await driver.wait(until.elementIsVisible(glass1OptionLocated), TIMEOUT);\nawait glass1OptionVisible.click();\nconst plenka1OptionLocated =\n  await driver.wait(until.elementLocated(By.xpath(plenka1Option)), TIMEOUT);\nconst plenka1OptionVisible =\n  await driver.wait(until.elementIsVisible(plenka1OptionLocated), TIMEOUT);\nawait plenka1OptionVisible.click();\nconst glass2OptionLocated =\n  await driver.wait(until.elementLocated(By.xpath(glass2Option)), TIMEOUT);\nconst glass2OptionVisible =\n  await driver.wait(until.elementIsVisible(glass2OptionLocated), TIMEOUT);\nawait glass2OptionVisible.click();\nconst plenka2OptionLocated =\n  await driver.wait(until.elementLocated(By.xpath(plenka2Option)), TIMEOUT);\nconst plenka2OptionVisible =\n  await driver.wait(until.elementIsVisible(plenka2OptionLocated), TIMEOUT);\nawait plenka2OptionVisible.click();\nconst glass3OptionLocated =\n  await driver.wait(until.elementLocated(By.xpath(glass3Option)), TIMEOUT);\nconst glass3OptionVisible =\n  await driver.wait(until.elementIsVisible(glass3OptionLocated), TIMEOUT);\nawait glass3OptionVisible.click();\nconst buttonAddTriplexLocated =\n  await driver.wait(until.elementLocated(By.css(buttonAddTriplex)), TIMEOUT);\nconst buttonAddTriplexVisible =\n  await driver.wait(until.elementIsVisible(buttonAddTriplexLocated), TIMEOUT);\nawait buttonAddTriplexVisible.click();\nconst btnDeleteLocated =\n      await driver.wait(until.elementLocated(By.xpath(btnDeleteTriplex)), TIMEOUT);\nconst btnDelete =\n      await driver.wait(until.elementIsVisible(btnDeleteLocated), TIMEOUT);\nawait btnDelete.click();\nconst btnDeleteTriplexConfirmLocated =\n      await driver.wait(until.elementLocated(By.css(btnDeleteTriplexConfirm)), TIMEOUT);\nconst btnDeleteTriplexConfirmVisible =\n      await driver.wait(until.elementIsVisible(btnDeleteTriplexConfirmLocated), TIMEOUT);\nawait btnDeleteTriplexConfirmVisible.click();\nawait driver.executeScript(`\n  let btn = document.querySelector(\".btnDeleteGlass.btn.btn-danger2\");\n  btn.click();\n`);\nconst btnClimaGuardConfirmLocated =\n      await driver.wait(until.elementLocated(By.css(btnClimaGuardConfirm)), TIMEOUT);\nconst btnClimaGuardConfirmVisible =\n      await driver.wait(until.elementIsVisible(btnClimaGuardConfirmLocated), TIMEOUT);\nawait btnClimaGuardConfirmVisible.click();\nawait driver.executeScript(`\n  let select = document.querySelector(\"#selectWindowsStructurals\");\n  let option = select[select.length - 1];\n  option.setAttribute(\"selected\", true);\n`);\nawait driver.executeScript(`\n  let btn1 =  document.querySelector(\"button[data-target='#modalAddFrame']\");\n  btn1.click();\n`);\nawait driver.executeScript(`\n  let addBtn = document.querySelector(\".btn.btn-success.pull-right.btn-xs\");\n  addBtn.click();\n`);\nawait driver.executeScript(`\n   let section1 = document.querySelector(\"#tableModalFrames_wrapper > .row:nth-child(2) [class='col-sm-12'] #tableModalFrames tbody > [role='row']:nth-child(1) > td:nth-child(6) .form-control\")\n   let option2 = section1[1];\n   option2.setAttribute(\"selected\", true);\n`);\nawait driver.executeScript(`\n  let btnPlus = document.querySelector(\"#tableModalFrames_wrapper [role='row']:nth-of-type(1) [data-hash]\");\n  btnPlus.click();\n`);\nlet har = await defaultProxy.getHar();\nconsole.log(\"Logs from browsermob:\");\nTestHelper.getRequestUrls(har.log.entries);\nassert.isOk((har.log.entries.filter(obj => {\n  return  obj.request.method === \"POST\" && obj.request.url === \"http://crm2.local/calculations\";\n})).length !== 0, \"test pass POST http://crm2.local/calculations!!\");\nassert.isOk((har.log.entries.filter(obj => {\n  return  obj.request.method === \"POST\" && obj.request.url === \"http://crm2.local/calculations/triplex\";\n})).length !== 0, \"test pass POST http://crm2.local/calculations/triplex!!\");\nassert.isOk((har.log.entries.filter(obj => {\n  return  obj.request.method === \"POST\" && obj.request.url === \"http://crm2.local/calculations/add/glass\";\n})).length !== 0, \"test pass POST http://crm2.local/calculations/add/glass!!\");\nassert.isOk((har.log.entries.filter(obj => {\n  return  obj.request.method === \"DELETE\" && obj.request.url === \"http://crm2.local/calculations/triplex\";\n})).length !== 0, \"test pass DELETE http://crm2.local/calculations/triplex!!\");\nassert.isOk((har.log.entries.filter(obj => {\n  return  obj.request.method === \"DELETE\" && obj.request.url === \"http://crm2.local/calculations/glass\";\n})).length !== 0, \"test pass DELETE http://crm2.local/calculations/glass!!\");\nassert.isOk((har.log.entries.filter(obj => {\n  return  obj.request.method === \"POST\" && obj.request.url === \"http://crm2.local/calculations/add/material\";\n})).length !== 0, \"test pass POST http://crm2.local/calculations/add/material!!\");",
+            "code": "const btnOpenLocated =  await driver.wait(until.elementLocated(By.css(\"a[href='/admin/departments']\")), TIMEOUT);\nconst btnOpenVisible =  await driver.wait(until.elementIsVisible(btnOpenLocated), TIMEOUT);\nawait btnOpenVisible.click();\nconst btnCreateDepLocated =  await driver.wait(until.elementLocated(By.css(\"button[data-target='#modalAddDepartment']\")), TIMEOUT);\nconst btnCreateDepVisible =  await driver.wait(until.elementIsVisible(btnCreateDepLocated), TIMEOUT);\nawait btnCreateDepVisible.click();",
             "err": {},
             "isRoot": false,
-            "uuid": "bfe5682d-47d1-47fa-9299-b341eecbce4a",
+            "uuid": "75c0f4cc-c186-4177-89c9-819684423f6d",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "bfe5682d-47d1-47fa-9299-b341eecbce4a"
+          "75c0f4cc-c186-4177-89c9-819684423f6d"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 17622,
+        "duration": 334,
         "root": false,
         "rootEmpty": false,
         "_timeout": 100000
