@@ -84,11 +84,9 @@ describe("written mocha data in technical calculations section", function() {
       if(error) {
         throw error;
       }
-      console.log(result);
       afterId =result[0].calculation_id;
+      assert.isOk(beforeId + 1 === afterId);
     });
-
-    assert.isOk(beforeId !== afterId);
 
     let har = await defaultProxy.getHar();
     console.log("Logs from browsermob:");

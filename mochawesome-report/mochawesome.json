@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2018-08-22T12:55:10.971Z",
-    "end": "2018-08-22T12:55:15.419Z",
-    "duration": 4448,
+    "start": "2018-08-24T15:35:14.815Z",
+    "end": "2018-08-24T15:35:20.116Z",
+    "duration": 5301,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -19,7 +19,7 @@
     "pendingPercentClass": "danger"
   },
   "suites": {
-    "uuid": "a784943e-41da-432d-b84a-9622badb85a5",
+    "uuid": "d4b09f96-6f63-40c3-b5e4-39dd09434097",
     "title": "",
     "fullFile": "",
     "file": "",
@@ -28,23 +28,23 @@
     "tests": [],
     "suites": [
       {
-        "uuid": "7c96f385-c918-4294-8b8a-c21072a58f1d",
-        "title": "check API server admin/departments section",
-        "fullFile": "/home/user/Рабочий стол/auto-tests/crm2/test/Scenario/API server/Administration panel/Department.spec.js",
-        "file": "/test/Scenario/API server/Administration panel/Department.spec.js",
+        "uuid": "b5ea0b7d-8e57-4ec9-98e9-521a64e40fcf",
+        "title": "check DB admin/teams",
+        "fullFile": "/home/user/Рабочий стол/auto-tests/crm2/test/Scenario/DB/Administration panel/Teams.spec.js",
+        "file": "/test/Scenario/DB/Administration panel/Teams.spec.js",
         "beforeHooks": [
           {
             "title": "\"before all\" hook: ret",
-            "fullTitle": "check API server admin/departments section \"before all\" hook: ret",
+            "fullTitle": "check DB admin/teams \"before all\" hook: ret",
             "timedOut": false,
-            "duration": 1835,
+            "duration": 2010,
             "pass": false,
             "fail": false,
             "pending": false,
-            "code": "let result = await LoginBasic();\ndriver = result.driver;\ndefaultProxy = result.defaultProxy;\nawait driver.get(adminUrl);\nawait driver\n  .manage()\n  .window()\n  .maximize();\ndone();",
+            "code": "let result = await LoginBasic();\ndriver = result.driver;\ndefaultProxy = result.defaultProxy;\nconnection = result.connection;\nawait driver.get(adminUrl);\nawait driver\n  .manage()\n  .window()\n  .maximize();\ndone();",
             "err": {},
             "isRoot": false,
-            "uuid": "9b9de54e-23c4-48d3-9d1f-888cf3637a6b",
+            "uuid": "898ab28b-c9c5-434e-9e77-195b7a08328a",
             "isHook": true,
             "skipped": false
           }
@@ -52,47 +52,47 @@
         "afterHooks": [
           {
             "title": "\"after all\" hook: ret",
-            "fullTitle": "check API server admin/departments section \"after all\" hook: ret",
+            "fullTitle": "check DB admin/teams \"after all\" hook: ret",
             "timedOut": false,
-            "duration": 2276,
+            "duration": 2214,
             "pass": false,
             "fail": false,
             "pending": false,
-            "code": "await defaultProxy.closeProxies();\nawait defaultProxy.end();\nawait driver.close();\nawait driver.quit();\nawait done();",
+            "code": "await defaultProxy.closeProxies();\nawait defaultProxy.end();\n// await driver.close();\n// await driver.quit();\nawait connection.end();\nawait done();",
             "err": {},
             "isRoot": false,
-            "uuid": "e1f6d92c-1989-4e76-b73f-dd1e4b5a10d2",
+            "uuid": "60134091-8ba0-455f-9bd3-03c0102b0989",
             "isHook": true,
             "skipped": false
           }
         ],
         "tests": [
           {
-            "title": "create department and check request POST and response",
-            "fullTitle": "check API server admin/departments section create department and check request POST and response",
+            "title": "write to DB teams",
+            "fullTitle": "check DB admin/teams write to DB teams",
             "timedOut": false,
-            "duration": 334,
+            "duration": 1070,
             "state": "passed",
             "speed": "slow",
             "pass": true,
             "fail": false,
             "pending": false,
-            "code": "const btnOpenLocated =  await driver.wait(until.elementLocated(By.css(\"a[href='/admin/departments']\")), TIMEOUT);\nconst btnOpenVisible =  await driver.wait(until.elementIsVisible(btnOpenLocated), TIMEOUT);\nawait btnOpenVisible.click();\nconst btnCreateDepLocated =  await driver.wait(until.elementLocated(By.css(\"button[data-target='#modalAddDepartment']\")), TIMEOUT);\nconst btnCreateDepVisible =  await driver.wait(until.elementIsVisible(btnCreateDepLocated), TIMEOUT);\nawait btnCreateDepVisible.click();",
+            "code": "let beforeId = 0;\nlet afterId = 0;\nlet status = \"\";\nconnection.query(\"SELECT * FROM teams ORDER BY team_id DESC LIMIT 1\", function (error, result) {\n  if (error) {\n    throw error;\n  }\n  beforeId = result[0].team_id;\n});\nconst  linkTerritoryLocated\n= await driver.wait(until.elementLocated(By.css(beginTeamBtn)), TIMEOUT);\nconst  linkTerritoryVisible\n= await driver.wait(until.elementIsVisible(linkTerritoryLocated), TIMEOUT);\nawait linkTerritoryVisible.click();\nconst  addTeamBtnLocated\n= await driver.wait(until.elementLocated(By.css(btnTeam)), TIMEOUT);\nconst  ddTeamBtnVisible\n= await driver.wait(until.elementIsVisible(addTeamBtnLocated), TIMEOUT);\nawait ddTeamBtnVisible.click();\nconst  inputNameLocated\n= await driver.wait(until.elementLocated(By.css(inputTeams)), TIMEOUT);\nconst  inputNameVisible\n= await driver.wait(until.elementIsVisible(inputNameLocated), TIMEOUT);\nawait inputNameVisible.sendKeys(\"Вася\");\n// fakeData().department\nconst textareaLocated\n= await driver.wait(until.elementLocated(By.css(textareaDepartment)), TIMEOUT);\nconst textareaVisible\n= await driver.wait(until.elementIsVisible(textareaLocated), TIMEOUT);\nawait textareaVisible.sendKeys(\"Пупкин\");\n// fakeData().departmentOther\nconst btnSuccesLocated = await driver.wait(until.elementLocated(By.css(btnSuccesOther)), TIMEOUT);\nconst btnSuccesVisible = await driver.wait(until.elementIsVisible(btnSuccesLocated), TIMEOUT);\nawait btnSuccesVisible.click();\nawait connection.query(\"SELECT * FROM teams ORDER BY team_id DESC LIMIT 1\", async function (error, result) {\n  if (error) {\n    throw error;\n  }\n  afterId = result[0].team_id;\n  status = result[0].status;\n  await assert.isOk(beforeId + 1 === afterId, \"id is incremented\");\n  await assert.isOk(status === \"active\", \"the entry was created\");\n});",
             "err": {},
             "isRoot": false,
-            "uuid": "75c0f4cc-c186-4177-89c9-819684423f6d",
+            "uuid": "467d5a3d-fad3-4fbb-8cca-03b165d7d048",
             "isHook": false,
             "skipped": false
           }
         ],
         "suites": [],
         "passes": [
-          "75c0f4cc-c186-4177-89c9-819684423f6d"
+          "467d5a3d-fad3-4fbb-8cca-03b165d7d048"
         ],
         "failures": [],
         "pending": [],
         "skipped": [],
-        "duration": 334,
+        "duration": 1070,
         "root": false,
         "rootEmpty": false,
         "_timeout": 100000

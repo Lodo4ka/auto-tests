@@ -98,4 +98,14 @@ module.exports = {
   optionYesDev: "#tableModalFrames_wrapper [role='row']:nth-of-type(1) [value='Y']",
   btnPlus: "/html//table[@id='tableModalFrames']/tbody/tr[1]//a",
   saveBtnCalculation: "/html//button[@id='btnUpdateCalculationInformation']",
+  linkAdminDep: "a[href='/admin/departments']",
+  btnCreateDep: "button[data-target='#modalAddDepartment']",
+  btnCreateDepartment: "button.btn.btn-success.pull-right",
+  inputDepartment: "input[name$='display_name'][required]",
+  textareaDepartment: "textarea[name='description']",
+  checkBoxDepartment: "[cellpadding] tbody tr:last-of-type td:nth-of-type(3)  input[type='checkbox']",
+  saveBtnDepartment: "[cellpadding] tbody tr:last-of-type td:nth-of-type(4) button:first-of-type",
+  btnTeam: "button[data-target='#modalAddTeam']",
+  beginTeamBtn: ".content tr:nth-of-type(2) .btn-default",
+  btnSuccesOther: ".btn.btn-success.pull-right"
 };

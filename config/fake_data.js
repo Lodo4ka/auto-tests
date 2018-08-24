@@ -20,7 +20,9 @@ const fake = function() {
     code_OPF: faker.random.number(),
     code_OKVED: faker.random.alphaNumeric(),
     general_director: faker.internet.userName(),
-    number: faker.random.number()
+    number: faker.random.number(),
+    department: faker.random.word(),
+    departmentOther: faker.commerce.productAdjective()
   };
 };
 
